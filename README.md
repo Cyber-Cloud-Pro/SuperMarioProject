@@ -58,19 +58,24 @@ This project showcases the deployment of a Kubernetes cluster on AWS EKS (Elasti
    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 8. Creating and Attaching IAM role to EC2 instance
-9. Building the INFRA:
-    Connect to the EC2 Instance
-    Get root and create a new Directory "SuperMario"  
+9. Building the INFRA:  
+    a. Connect to the EC2 Instance  
+    b. Get root and create a new Directory "SuperMario"  
     ```bash
     sudo su
     mkdir SuperMario
     cd SuperMario
 
     ```
-    Clone the Git Repo
+    c. Clone the Git Repo
    ```bash
+   git clone https://github.com/Cyber-Cloud-Pro/SuperMarioProject.git
+   ```
+   d.  Change Dir to SuperMarioProject
+   ```bash
+   cd SuperMarioProject
+   ```
    
-       
 
 
 
