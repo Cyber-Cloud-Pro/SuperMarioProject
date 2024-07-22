@@ -103,7 +103,7 @@ This project showcases the deployment of a Kubernetes cluster on AWS EKS (Elasti
       ```bash
       aws eks update-kubeconfig --name EKS_CLOUD --region ap-south-1
       ```
-10. Creating deployment.yaml and servive.yaml for EKS
+10. Creating deployment.yaml and servive.yaml for EKS  
     a. Change Dir where deployment.yaml and service.yaml files are stored (cd ..)  
     b. Create the Deployemnt
     ```bash
