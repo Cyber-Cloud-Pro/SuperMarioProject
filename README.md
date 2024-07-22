@@ -1,4 +1,4 @@
-# Super Mario Project  
+# Super Mario Project 🍄🍄 
 This project showcases the deployment of a Kubernetes cluster on AWS EKS (Elastic Kubernetes Service) using Terraform for infrastructure provisioning. The cluster is hosted on AWS EC2 instances, managed through Terraform configurations.
 
 
@@ -7,12 +7,6 @@ This project showcases the deployment of a Kubernetes cluster on AWS EKS (Elasti
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
   - [Installation Steps](#installation-steps)
-- [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Testing](#testing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Installation
 
@@ -75,6 +69,60 @@ This project showcases the deployment of a Kubernetes cluster on AWS EKS (Elasti
    ```bash
    cd SuperMarioProject
    ```
+   e. Change Dir /EKS-TF
+   ```bash
+   cd EKS-TF
+   ```
+   f. Edit backend.tf
+   Make sure to provide your bucket name and and region you are working in.
+   ```bash
+   terraform{
+     backend "s3" {
+       bucket = "supermario" #Your Bucket Name
+       key    = "EKS/terraform.tfstate"
+       region = "ap-south-1"  #Your Region
+   ```
+   g. Working with Terraform
+      #terraform init
+      ```bash
+      terraform init
+      ```
+      #terraform validate
+      ```bash
+      terraform validate
+      ```
+      #terraform plan
+      ```bash
+      terraform plan
+      ```
+      #terraform apply
+      ```bash
+      terraform apply --auto-approve
+      ```
+   h. Connecting EKS
+      ```bash
+      aws eks update-kubeconfig --name EKS_CLOUD --region ap-south-1
+      ```
+10. Creating deployment.yaml and servive.yaml for EKS
+    a. Change Dir where deployment.yaml and service.yaml files are stored (cd ..)  
+    b. Create the Deployemnt
+    ```bash
+    kubectl apply -f deployment.yaml
+    ```
+    c. Create the Service
+    ```bash
+    kubectl apply -f service.yaml
+    ```
+    d. Check status  
+    Let's Check the status of deployment  
+    ```bash
+    kubectl get all
+    ```
+    And Now its time to get all info about the deployment  
+    ```bash
+    kubectl describe service mario-service
+    ```
+   
    
 
 
